@@ -32,10 +32,9 @@ export const TodoList: React.FC<Props> = ({
           const isSelected = selectedTodo?.id === todo.id;
 
           return (
-            <>
+            <React.Fragment key={todo.id}>
               <tr
                 data-cy="todo"
-                key={todo.id}
                 className={todo.completed ? 'has-background-info-light' : ''}
               >
                 <td className="is-vcentered">{todo.id}</td>
@@ -73,7 +72,7 @@ export const TodoList: React.FC<Props> = ({
                   </button>
                 </td>
               </tr>
-            </>
+            </React.Fragment>
           );
         })}
       </tbody>
